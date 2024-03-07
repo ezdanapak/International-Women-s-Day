@@ -3,47 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Women's Day</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- Uncomment this line if you haven't included the YouTube Player API script -->
-  <script src="https://www.youtube.com/iframe_api"></script>
+  <title>wdnb</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    p {
+      color: #666;
+    }
+
+    /* Responsive YouTube video */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-
     <h1>გილოცავ ქალთა საერთაშორისო დღეს, 8 მარტს!</h1>
-    
-    <!-- YouTube Player API -->
-    <!-- Using the video with ID 'O0nqwgu_Us4' -->
-    <div id="player"></div>
 
+    
+    <!-- Responsive YouTube Player -->
+    <div class="video-container">
+      <!-- Using the video with ID 'O0nqwgu_Us4' -->
+      <iframe src="https://www.youtube.com/embed/WteqzM6nHFI?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    
     <p><a href="index.html">უკან დაბრუნება</a></p>
   </div>
-
-  <script>
-    // YouTube Player API script
-    let player;
-    function onYouTubeIframeAPIReady() {
-      player = new YT.Player('player', {
-        height: '315',
-        width: '560',
-        videoId: 'WteqzM6nHFI', // Replace 'VIDEO_ID' with your YouTube video ID
-        playerVars: {
-          'autoplay': 1,
-          'controls': 1, // Hide player controls if desired
-          'rel': 0,      // Hide related videos at the end
-        },
-        events: {
-          'onReady': onPlayerReady
-        }
-      });
-    }
-
-    function onPlayerReady(event) {
-      event.target.playVideo();
-    }
-  </script>
- 
 </body>
 </html>
-
